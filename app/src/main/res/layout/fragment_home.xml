@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.HomeFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/blacktext"
+            android:text="稚量"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+
+            <com.youth.banner.Banner
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/banner"
+                android:layout_gravity="center_horizontal"
+                app:banner_loop_time="5000"
+                app:banner_radius="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/logo_bg" />
+
+            <LinearLayout
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+
+                    android:layout_marginTop="20dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:elevation="1dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:id="@+id/capture_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/function4"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/camera" />
+
+                        <TextView
+                            android:id="@+id/tv_measure1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginTop="18dp"
+                            android:text="测量尺寸"
+                            android:textColor="@color/blacktext"
+                            android:textSize="20sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="26dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/tv_measure1"
+                            android:text="点击获取你的专属尺寸"
+                            android:textColor="#838383"
+                            android:textSize="15sp" />
+
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+
+                    android:layout_marginTop="15dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:elevation="1dp"
+                        android:id="@+id/recommend_size"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/function4"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="5dp">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginRight="3dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/clothes" />
+
+                        <TextView
+                            android:id="@+id/tv_measure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="穿搭推荐"
+                            android:textColor="@color/blacktext"
+                            android:textSize="@dimen/text_size_17sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="15dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_measure"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="智能分析"
+                            android:textColor="#6a6a6a"
+                            android:textSize="@dimen/text_size_15sp" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/home_mydata"
+                        android:elevation="1dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/function4"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginEnd="-2dp"
+                            android:src="@drawable/data" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的数据"
+                            android:textColor="@color/blacktext"
+                            android:textSize="@dimen/text_size_17sp"
+                            android:id="@+id/tv_recommend"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="15dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_recommend"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="15dp"
+                            android:text="立即查看"
+                            android:textColor="#6a6a6a"
+                            android:textSize="@dimen/text_size_15sp" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_3"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+
+    >
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:fitsSystemWindows="true"
+        android:id="@+id/view_page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <include
+        layout="@layout/bottom" />
+
+</LinearLayout>

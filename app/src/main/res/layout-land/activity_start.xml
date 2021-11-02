@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+
+
+        <RelativeLayout
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/start_logo_height"
+            android:layout_alignParentTop="true"
+            android:background="@color/logo_background"
+            android:scaleType="fitXY">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/title"
+                android:src="@drawable/icon_logo"></ImageView>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="80dp"
+                android:text="智能量体 \n    立即体验"
+                android:textColor="@color/white"
+                android:textSize="28sp"></TextView>
+
+
+            <ImageView
+                android:id="@+id/setting_img"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@mipmap/icon_setting" />
+        </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/capture_body"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/function"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/camera"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开始测量尺寸"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="65dp"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/right_victor"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"/>
+                    
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

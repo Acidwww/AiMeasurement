@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="black">#000000</color>
+    <color name="common_line_color">#D9D9D9</color>
+    <color name="primary_text_color">#A9A9A9</color>
+    <color name="secondary_text_color">#626262</color>
+    <color name="text_color">#1d1d1d</color>
+    <color name="logo_background">#408CB3</color>
+    <color name="primary_background">#f2f2f2</color>
+    <color name="button_background">#5CACEE</color>
+    <color name="white">#ffffff</color>
+
+    <color name="color_red_card">#FFFA2A2D</color>
+    <color name="color_red_cancel">#EE6A50</color>
+    <color name="backgroung_gray">#f2f3f5</color>
+    <color name="gray">#676767</color>
+    <color name="blacktext">#161617</color>
+    <color name="transparent">#00000000</color>
+    <color name="login_line_color">#dededf</color>
+
+    <color name="login_input_active">#31b968</color>
+
+    <color name="login_other_color">#cacaca</color>
+
+    <color name="account_input_bg_color">#33ffffff</color>
+
+    <color name="account_lock_bg">#ff43815c</color>
+
+    <color name="account_lock_font_color">#FF68997C</color>
+
+    <color name="account_input_color">#c9c9c9</color>
+
+    <color name="account_pressed_true">#14b94d</color>
+
+    <color name="text_secondary_color">#9d9d9d</color>
+
+    <color name="black_alpha_128">#80000000</color>
+
+    <color name="list_item_background_pressed">#FCFCFC</color>
+
+    <!-- 下拉刷新时，颜色值 -->
+
+
+    <color name="swiperefresh_color4">#ffaa66cc</color>
+
+    <color name="bg_press">#ebebeb</color>
+    <color name="text_recommend">#525B76</color>
+    <color name="text_recommend_small">#707070</color>
+</resources>

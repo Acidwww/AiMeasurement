@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fireTopLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <com.example.aibodysizemeasurement.others.LensEnginePreview
+        android:id="@+id/firePreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-3dp">
+
+        <com.example.aibodysizemeasurement.others.GraphicOverlay
+            android:id="@+id/fireOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/people"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </com.example.aibodysizemeasurement.others.LensEnginePreview>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="@dimen/icon_back_margin"
+            android:layout_marginTop="@dimen/icon_back_margin"
+            android:background="@drawable/button_circle_background"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/mlkit_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="ML Kit"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:visibility="gone"></TextView>
+
+
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:id="@+id/llCount"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/big_number"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_marginTop="-5dp"
+            android:id="@+id/tvCountDown"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="124sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/llmention_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="165dp">
+        <TextView
+            android:id="@+id/tv_mention_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请尽量将身体对准轮廓"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_17sp"
+            android:shadowColor="#ff000000"
+            android:shadowRadius="10"
+            android:shadowDx="5"
+            android:shadowDy="5"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/llmention_2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="165dp">
+        <TextView
+            android:gravity="center"
+            android:id="@+id/tv_mention_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请向右转\n用身体侧面对准轮廓"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_17sp"
+            android:shadowColor="#ff000000"
+            android:shadowRadius="10"
+            android:shadowDx="5"
+            android:shadowDy="5"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/zoomImageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#000000"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/take_picture_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/similarity_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        >
+
+
+
+    </RelativeLayout>
+
+
+    <ToggleButton
+        android:id="@+id/facingSwitch"
+        android:layout_width="@dimen/circle_stroke_radius"
+        android:layout_height="@dimen/circle_stroke_radius"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/facingswitch_stroke"
+        android:textOff=""
+        android:textOn="" />
+</RelativeLayout>

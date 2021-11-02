@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="@drawable/popbackground_buttom"
+    android:orientation="vertical">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="5dp"
+    >
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/to_down"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="25dp"
+            android:text="测量须知"
+            android:textColor="#181818"
+            android:textSize="24sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="为了保证测量的准确性："
+            android:textColor="@color/blacktext"
+            android:textSize="@dimen/text_size_17sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="5dp"
+            android:text="   ★请尽量穿着贴身衣物或减少衣量；"
+            android:textColor="@color/blacktext"
+            android:textSize="@dimen/text_size_17sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="   ★请将您的长发盘起避免垂在背部；"
+            android:textColor="@color/blacktext"
+            android:textSize="@dimen/text_size_17sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="10dp"
+            android:text="图片数据不会上传，请放心使用"
+            android:textColor="#6a6a6a"
+            android:textSize="@dimen/text_size_16sp"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="15dp"
+            android:id="@+id/pop_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/function3"
+            android:layout_centerHorizontal="true">
+            <ImageView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/camera"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

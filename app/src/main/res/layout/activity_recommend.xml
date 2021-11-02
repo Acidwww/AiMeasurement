@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RecommendActivity"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/background_3"
+    android:orientation="vertical"
+>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/tv_test"
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ib_navigation_back_info"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_login_navigation_bar"
+            android:contentDescription="@null"
+            android:layout_gravity="center"
+            app:srcCompat="@mipmap/back_b" />
+
+        <TextView
+            android:id="@+id/tv_navigation_label"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/text_recommend"
+            android:textSize="18sp"
+            android:text="购衣推荐" />
+
+        <Space
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/circle_white">
+        <LinearLayout
+            android:id="@+id/info_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您的体型"
+                android:textColor="@color/text_recommend"
+                android:textSize="@dimen/text_size_17sp"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:layout_marginTop="6.5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/body_type"
+                android:textColor="@color/text_recommend"
+                android:textSize="25sp"
+                />
+
+
+
+        </LinearLayout>
+        <View
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="搭配推荐"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/text_recommend"
+            android:textSize="@dimen/text_size_17sp" />
+            <TextView
+                android:id="@+id/tv_recommend_0"
+                android:lineSpacingExtra="5dp"
+                android:letterSpacing="0.03"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16sp"
+                android:textColor="@color/text_recommend_small"/>
+        <TextView
+            android:id="@+id/tv_recommend_1"
+            android:lineSpacingExtra="5dp"
+            android:letterSpacing="0.03"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/text_recommend_small"/>
+            <TextView
+                android:id="@+id/tv_recommend_2"
+                android:lineSpacingExtra="3dp"
+                android:letterSpacing="0.01"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16sp"
+                android:textColor="@color/text_recommend_small"/>
+            <TextView
+                android:id="@+id/tv_recommend_3"
+                android:lineSpacingExtra="5dp"
+                android:letterSpacing="0.03"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16sp"
+                android:textColor="@color/text_recommend_small"/>
+            <TextView
+                android:id="@+id/tv_recommend_4"
+                android:lineSpacingExtra="3dp"
+                android:letterSpacing="0.01"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_16sp"
+                android:textColor="@color/text_recommend_small"/>
+        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</LinearLayout>

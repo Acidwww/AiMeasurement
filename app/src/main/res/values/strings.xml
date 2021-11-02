@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">稚量</string>
+    <string name="face_detection">Face</string>
+    <string name="face_3d">3D Face</string>
+    <string name="skeletlon">Skeletlon</string>
+    <string name="liveness_detection">Liveness Detection</string>
+    <string name="handKeypoint">HandKeyPoint</string>
+    <string name="gesture">Gesture</string>
+    <string name="faceVerification">Face Verification</string>
+
+    <string name="ok">OK</string>
+    <string name="settings">Settings</string>
+    <string name="cancel">cancel</string>
+
+    <string name="click_add_template_picture">Upload the template picture</string>
+    <string name="click_add_compare_picture">Upload the compare picture</string>
+    <string name="click_compare">Compare</string>
+    <string name="please_select_picture">Please select a picture to process~</string>
+
+
+    <string name="all">all</string>
+    <string name="coming_soon">coming soon</string>
+    <string name="back">back</string>
+    <string name="take_photo">Take photo</string>
+    <string name="select_from_album">Select image from album</string>
+    <string name="cloud_handkeypoint">HandKeyPoint</string>
+
+    <string name="camera_permission_rationale">This sample app requires camera and storage access in order to
+        demo the API.</string>
+
+    <string name="more_face_data">facial data</string>
+
+    <string name="versions">Version：</string>
+
+    <string name="start">Start the default UI</string>
+    <string name="custom_start">Starting the Custom UI</string>
+    <string name="custom_ui">Face Detection</string>
+    <string name="custom_tips">Put your face in the frame.</string>
+
+    <string name="face_point">Point</string>
+    <string name="face_feature">Feature</string>
+
+    <string name="gesture_one">Digit 1</string>
+    <string name="gesture_two">Digit 2</string>
+    <string name="gesture_three">Digit 3</string>
+    <string name="gesture_four">Digit 4</string>
+    <string name="gesture_five">Digit 5</string>
+    <string name="gesture_six">Digit 6</string>
+    <string name="gesture_seven">Digit 7</string>
+    <string name="gesture_eight">Digit 8</string>
+    <string name="gesture_nine">Digit 9</string>
+    <string name="gesture_diss">Poor Comments</string>
+    <string name="gesture_clench">Clench Fist</string>
+    <string name="gesture_likes">likes</string>
+    <string name="gesture_bx">One-handed bee hearts</string>
+    <string name="gesture_confirm">OK</string>
+    <string name="gesture_others">Other gestures</string>
+    <string name="account">账号</string>
+    <string name="plesase_input_account">请输入账号</string>
+    <string name="password">密码</string>
+    <string name="plesase_input_password">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="go_to_registe">去注册</string>
+    <string name="third_method_login">第三方登录</string>
+    <string name="iv_third_method1">微信</string>
+    <string name="iv_third_method2">QQ</string>
+    <string name="iv_third_method3">GitHub</string>
+    <string name="if_login_is_meaning_to_geree">登录即代表同意</string>
+    <string name="the_service">服务条款</string>
+    <string name="iv_project_icon">稚量</string>
+    <string name="tv_register">注册账号</string>
+    <string name="tv_phone">手机号</string>
+    <string name="et_phone">请输入手机号</string>
+    <string name="bt_get_code">获取验证码</string>
+    <string name="tv_code">验证码</string>
+    <string name="et_code">请输入验证码</string>
+    <string name="tv_name">用户名</string>
+    <string name="et_name">请输入用户名</string>
+    <string name="tv_gender">性别</string>
+    <string name="et_gender">请输入性别</string>
+    <string name="tv_age">年龄</string>
+    <string name="et_age">请输入年龄</string>
+    <string name="tv_password">密码</string>
+    <string name="et_password">请输入密码</string>
+    <string name="et_password2">请确认密码</string>
+    <string name="bt_register">注册</string>
+    <string name="zhanbudenglu"><u>暂不登录</u></string>
+    <string name="username">用户名</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login_input_username_hint">用户名</string>
+    <string name="hint_password">密码</string>
+    <string name="login_register_hint">注册</string>
+    <string name="login_forget_hint">忘记密码</string>
+    <string name="login_hold_hint">自动登录</string>
+    <string name="login_other_hint">其他方式登录</string>
+    <string name="register_input_username_hint">请输入手机号</string>
+    <string name="register_sms_auth_code">请输入验证码</string>
+    <string name="register_sms_hint">获取验证码</string>
+    <string name="retrieve_pwd_step_hint">注册</string>
+    <string name="retrieve_pwd_email_label_one">邮箱用户找回密码，请</string>
+    <string name="retrieve_pwd_email_label">点击这里</string>
+    <string name="hint_please_input_password">请输入密码</string>
+
+
+</resources>
