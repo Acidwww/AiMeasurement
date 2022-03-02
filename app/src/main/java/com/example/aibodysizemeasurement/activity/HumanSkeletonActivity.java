@@ -27,6 +27,7 @@ import android.os.Message;
 import android.text.Spannable;
 import android.util.Log;
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
@@ -42,6 +43,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 
@@ -49,13 +51,21 @@ import com.example.aibodysizemeasurement.others.CameraConfiguration;
 import com.example.aibodysizemeasurement.others.GraphicOverlay;
 import com.example.aibodysizemeasurement.others.LensEngine;
 import com.example.aibodysizemeasurement.others.LensEnginePreview;
+import com.example.aibodysizemeasurement.transtor.ImageSegmentationTransactor;
 import com.example.aibodysizemeasurement.transtor.LocalSketlonTranstor;
 import com.example.aibodysizemeasurement.R;
 import com.example.aibodysizemeasurement.callback.CameraCallback;
 import com.example.aibodysizemeasurement.callback.ImageUtilCallBack;
+import com.example.aibodysizemeasurement.utils.DataCleanManager;
 import com.example.aibodysizemeasurement.utils.ImageUtils;
 import com.example.aibodysizemeasurement.utils.ToastUtil;
+import com.huawei.hms.mlsdk.imgseg.MLImageSegmentationScene;
+import com.huawei.hms.mlsdk.imgseg.MLImageSegmentationSetting;
+import com.huawei.hms.mlsdk.skeleton.MLSkeletonAnalyzer;
 import com.huawei.hms.mlsdk.skeleton.MLSkeletonAnalyzerSetting;
+import com.lxj.xpopup.XPopup;
+import com.lxj.xpopup.interfaces.OnCancelListener;
+import com.lxj.xpopup.interfaces.OnConfirmListener;
 
 
 import java.io.IOException;
@@ -105,6 +115,7 @@ public final class HumanSkeletonActivity extends BaseActivity
     private Camera mCamera;
 
     private LocalSketlonTranstor localSketlonTranstor;
+    private ImageSegmentationTransactor imageSegmentationTransactor;
 
     private Handler mHandler = new MsgHandler();
 
@@ -126,6 +137,7 @@ public final class HumanSkeletonActivity extends BaseActivity
     private double footF,footS;
 
     private boolean isLogin;
+    private MLImageSegmentationSetting setting1;
 
     @Override
     public void callCameraBitmap(Bitmap bitmap) {
@@ -209,14 +221,18 @@ public final class HumanSkeletonActivity extends BaseActivity
         }
         MLSkeletonAnalyzerSetting setting;
 
-
         setting = new MLSkeletonAnalyzerSetting.Factory().create();
         Log.i(TAG, "skeletonmode");
-
+        setting1 = new MLImageSegmentationSetting.Factory()
+                .setAnalyzerType(MLImageSegmentationSetting.BODY_SEG)
+                .setExact(true)
+                .setScene(MLImageSegmentationScene.GRAYSCALE_ONLY)
+                .create();
 
         this.localSketlonTranstor = new LocalSketlonTranstor(setting, this, mHandler);
+        this.imageSegmentationTransactor = new ImageSegmentationTransactor(this.getApplicationContext(), setting1,localSketlonTranstor);
         this.localSketlonTranstor.setmCameraCallback(this);
-        this.lensEngine.setMachineLearningFrameTransactor(localSketlonTranstor);
+        this.lensEngine.setMachineLearningFrameTransactor(localSketlonTranstor,imageSegmentationTransactor);
     }
 
     private void startLensEngine() {
@@ -240,12 +256,27 @@ public final class HumanSkeletonActivity extends BaseActivity
     }
 
     @Override
-    public void onClick(View view) {
+    public void onClick(@NonNull View view) {
 
         if (view.getId() == R.id.back) {
-
+            DataCleanManager.clearAllCache(getApplicationContext());
+            this.lensEngine.release();
             finish();
         }
+    }
+
+    //拦截返回键
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode==KeyEvent.KEYCODE_BACK){
+
+            this.lensEngine.release();
+            DataCleanManager.clearAllCache(getApplicationContext());
+            finish();
+            return true;
+
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override

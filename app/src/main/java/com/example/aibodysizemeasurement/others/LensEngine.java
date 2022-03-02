@@ -13,7 +13,9 @@ import android.util.Log;
 
 import androidx.annotation.RequiresPermission;
 
+import com.example.aibodysizemeasurement.transtor.ImageSegmentationTransactor;
 import com.example.aibodysizemeasurement.transtor.ImageTransactor;
+import com.example.aibodysizemeasurement.transtor.LocalSketlonTranstor;
 import com.huawei.hms.common.size.Size;
 
 
@@ -40,10 +42,12 @@ public class LensEngine {
     private Thread transactingThread;
     private final FrameTransactingRunnable transactingRunnable;
     private final Object transactorLock = new Object();
-    private ImageTransactor frameTransactor;
+    private final Object ShowLock = new Object();
+    private LocalSketlonTranstor frameTransactor;
+    private ImageSegmentationTransactor anotherTransactor;
     private CameraSelector selector;
     private final Map<byte[], ByteBuffer> bytesToByteBuffer = new IdentityHashMap<>();
-    private GraphicOverlay overlay;
+    private GraphicOverlay overlay=null;
 
 
     public LensEngine(Activity activity, CameraConfiguration configuration, GraphicOverlay graphicOverlay,int screenWidth,int screenHeight) {
@@ -63,9 +67,16 @@ public class LensEngine {
         synchronized (this.transactorLock) {
             this.stop();
             this.transactingRunnable.release();
+
+            this.overlay=null;
+
             if (this.frameTransactor != null) {
                 this.frameTransactor.stop();
                 this.frameTransactor = null;
+            }
+            if (this.anotherTransactor != null) {
+                this.anotherTransactor.stop();
+                this.anotherTransactor = null;
             }
         }
     }
@@ -215,12 +226,17 @@ public class LensEngine {
         }
     }
 
-    public void setMachineLearningFrameTransactor(ImageTransactor transactor) {
+    public void setMachineLearningFrameTransactor(LocalSketlonTranstor transactor, ImageSegmentationTransactor anotherTransactor) {
         synchronized (this.transactorLock) {
             if (this.frameTransactor != null) {
                 this.frameTransactor.stop();
             }
+
             this.frameTransactor = transactor;
+            if (this.anotherTransactor != null) {
+                this.anotherTransactor.stop();
+            }
+            this.anotherTransactor = anotherTransactor;
         }
     }
 
@@ -272,6 +288,7 @@ public class LensEngine {
         }
 
         @SuppressLint("InlinedApi")
+
         @SuppressWarnings("GuardedBy")
         @Override
         public void run() {
@@ -298,6 +315,16 @@ public class LensEngine {
                 try {
                     synchronized (LensEngine.this.transactorLock) {
                         Log.d(LensEngine.TAG, "Process an image");
+                        LensEngine.this.anotherTransactor.process(
+                                data,
+                                new FrameMetadata.Builder()
+                                        .setWidth(LensEngine.this.selector.getPreviewSize().getWidth())
+                                        .setHeight(LensEngine.this.selector.getPreviewSize().getHeight())
+                                        .setRotation(LensEngine.this.selector.getRotation())
+                                        .setCameraFacing(LensEngine.this.selector.getFacing())
+                                        .build(),
+                                LensEngine.this.overlay
+                        );
                         LensEngine.this.frameTransactor.process(
                                 data,
                                 new FrameMetadata.Builder()
@@ -308,12 +335,23 @@ public class LensEngine {
                                         .build(),
                                 LensEngine.this.overlay
                         );
+
+
                     }
                 } catch (Throwable t) {
                     Log.e(LensEngine.TAG, "Exception thrown from receiver.", t);
                 } finally {
                     LensEngine.this.camera.addCallbackBuffer(data.array());
                 }
+//                synchronized (LensEngine.this.ShowLock) {
+//                    if(LensEngine.this.frameTransactor.resultMLSkeletons!=null&&LensEngine.this.anotherTransactor.resultBitmap!=null){
+//                        LensEngine.this.overlay.clear();
+//                        TowImageGraphic towImageGraphic=new TowImageGraphic(LensEngine.this.overlay,LensEngine.this.anotherTransactor.resultBitmap,LensEngine.this.frameTransactor.resultMLSkeletons);
+//                        LensEngine.this.anotherTransactor.getOverlay().addGraphic(towImageGraphic);
+//                        LensEngine.this.overlay.postInvalidate();
+//
+//                    }
+//                }
             }
         }
     }

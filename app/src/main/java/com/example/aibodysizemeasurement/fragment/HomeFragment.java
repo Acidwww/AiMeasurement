@@ -33,6 +33,7 @@ import com.example.aibodysizemeasurement.application.MyApplication;
 import com.example.aibodysizemeasurement.bean.DataBean;
 
 import com.example.aibodysizemeasurement.popup.CustomButtomPopup;
+import com.example.aibodysizemeasurement.utils.DataCleanManager;
 import com.example.aibodysizemeasurement.utils.ToastUtil;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.core.BasePopupView;
@@ -123,7 +124,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                                 startActivity(intent);
                                 break;
                             case 2:
-                                ToastUtil.showToast(getContext(),"敬请期待");
+                                try {
+                                    ToastUtil.showToast(getContext(), DataCleanManager.getTotalCacheSize(getContext()));
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 break;
                         }
                     }

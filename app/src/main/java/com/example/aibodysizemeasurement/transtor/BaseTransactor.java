@@ -129,9 +129,9 @@ public abstract class BaseTransactor<T> implements ImageTransactor {
             @Override
             public void onSuccess(T results) {
                 if (metadata == null || metadata.getCameraFacing() == CameraConfiguration.getCameraFacing()) {
-                    BaseTransactor.this.onSuccess(bitmap, results, metadata, graphicOverlay);
+                    BaseTransactor.this.onSuccess(bitmap, results, metadata, graphicOverlay);//回调
                 }
-                BaseTransactor.this.processLatestImage(graphicOverlay);
+                BaseTransactor.this.processLatestImage(graphicOverlay);//检测最新的图像
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

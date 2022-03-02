@@ -71,6 +71,8 @@ public class LocalSketlonTranstor extends BaseTransactor<List<MLSkeleton>> {
     private double foot=0;
 
     Context context = MyApplication.getInstance();
+    private LocalSkeletonGraphic hmsMLLocalSkeletonGraphic;
+    public List<MLSkeleton> resultMLSkeletons;
 
     public LocalSketlonTranstor(MLSkeletonAnalyzerSetting setting, Context context, Handler handler) {
         super(context);
@@ -103,21 +105,30 @@ public class LocalSketlonTranstor extends BaseTransactor<List<MLSkeleton>> {
             @NonNull List<MLSkeleton> MLSkeletons,
             @NonNull FrameMetadata frameMetadata,
             @NonNull GraphicOverlay graphicOverlay) {
-        graphicOverlay.clear();
+            //graphicOverlay.clear();
+//        graphicOverlay.addGraphic(hmsMLLocalSkeletonGraphic);
+
         Log.d(TAG, "Total MLSkeletons graphicOverlay start");
         if (originalCameraImage != null) {
             mCameraCallback.callCameraBitmap(originalCameraImage);
-            CameraImageGraphic imageGraphic = new CameraImageGraphic(graphicOverlay, originalCameraImage);
-            graphicOverlay.addGraphic(imageGraphic);
         }
+//        if (originalCameraImage != null) {
+//            mCameraCallback.callCameraBitmap(originalCameraImage);
+//            CameraImageGraphic imageGraphic = new CameraImageGraphic(graphicOverlay, originalCameraImage);
+//            graphicOverlay.addGraphic(imageGraphic);
+//        }
 
         if (MLSkeletons == null || MLSkeletons.isEmpty()) {
             return;
         }
         Log.d(TAG, "Total MLSkeletons hmsMLLocalFaceGraphic start");
-        LocalSkeletonGraphic hmsMLLocalSkeletonGraphic = new LocalSkeletonGraphic(graphicOverlay, MLSkeletons);
-        graphicOverlay.addGraphic(hmsMLLocalSkeletonGraphic);
-        graphicOverlay.postInvalidate();
+        resultMLSkeletons=MLSkeletons;
+
+//        hmsMLLocalSkeletonGraphic = new LocalSkeletonGraphic(graphicOverlay, MLSkeletons);
+//        graphicOverlay.addGraphic(hmsMLLocalSkeletonGraphic);
+//        graphicOverlay.postInvalidate();
+
+
         Log.d(TAG, "Total MLSkeletons graphicOverlay end");
 
         if (mHandler == null) {
