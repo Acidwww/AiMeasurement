@@ -9,6 +9,7 @@
 
 ## 主要界面展示
 ![](https://github.com/Acidwww/AiMeasurement/blob/master/%E6%95%88%E6%9E%9C.gif)
+衣物尽量贴身，测量更加精准。如果担心隐私问题，另一个branche中的代码在拍摄时做了人像分割处理。
 ![](https://s3.bmp.ovh/imgs/2022/02/5887a3776314921e.jpg)
 ![](https://s3.bmp.ovh/imgs/2022/02/91a0c0e2aae43944.jpg)
 ![](https://s3.bmp.ovh/imgs/2022/02/ae1bb5d641507822.jpg)
